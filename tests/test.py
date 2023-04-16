@@ -1,13 +1,14 @@
-
 import random
 import json
 
-import node as node
-import block as block
+from blockchain import node as node, block as block
+
 
 def test_modules():
     test_nodes()
     test_block_init()
+
+
 def test_nodes():
     for i in range(10):
         server_id = random.randint(1, 3)
@@ -151,4 +152,3 @@ def test_block_init():
         assert genesis_hash[-4:] == "0000"
         assert genesis_prev_hash == 'GENESIS'
         assert len(genesis_data) == 256
-
