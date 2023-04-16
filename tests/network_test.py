@@ -2,8 +2,7 @@ import threading
 import time
 import json
 
-import node as node
-import serverPart as serverPart
+from blockchain import serverPart as serverPart, node as node
 
 
 def test_start_node():
