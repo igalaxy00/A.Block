@@ -1,18 +1,30 @@
-version: "3"
+version: "3.8"
 
 services:
+  node3:
+    image: igor/blockchain
+    container_name: node3
+    network_mode: host
+    command: "3"
+    stdin_open: true
+    tty: true
 
-  node_alpha:
-    build: .
-    network_mode: "host"
-    command: python -u main.py 127.0.0.1 60001 False
 
-  node_beta:
-    build: .
-    network_mode: "host"
-    command: python -u main.py 127.0.0.1 60002 False
+  node2:
+    image: igor/blockchain
+    container_name: node2
+    network_mode: host
+    command: "2"
+    stdin_open: true
+    tty: true
 
-  node_gamma:
-    build: .
-    network_mode: "host"
-    command: python -u main.py 127.0.0.1 60003 False
+  node1:
+    image: igor/blockchain
+    container_name: node1
+    network_mode: host
+    command: "1"
+    stdin_open: true
+    tty: true
+    depends_on:
+      - node2
+      - node3

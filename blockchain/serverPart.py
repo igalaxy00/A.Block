@@ -4,22 +4,22 @@ import threading
 import grequests
 import json
 import block
-
+import logging
 
 def start(server_id, current_node):
     current_server = Flask(__name__)
     if server_id == 1:
-        current_port = 6000
-        port2 = 6001
-        port3 = 6002
+        current_port = 5000
+        port2 = 5001
+        port3 = 5002
     elif server_id == 2:
-        current_port = 6001
-        port2 = 6000
-        port3 = 6002
+        current_port = 5001
+        port2 = 5000
+        port3 = 5002
     else:
-        current_port = 6002
-        port2 = 6000
-        port3 = 6001
+        current_port = 5002
+        port2 = 5000
+        port3 = 5001
     servers_urls = [f'http://localhost:{current_port}/', f'http://localhost:{port2}/', f'http://localhost:{port3}/']
 
     def new_blocks_generator():

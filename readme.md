@@ -27,11 +27,10 @@ dev [![Tests for blockchain](https://github.com/igalaxy00/A.Block/actions/workfl
 
 ```git clone https://github.com/igalaxy00/A.Block.git```
 
-2) Перейти в папку проекта
-
 ```
-docker-compose build
-docker-compose up   
+cd PythonBlockchain
+docker build -t igor/blockchain:latest .
+docker-compose up
 ```
 ## Демонстрация работы
 
